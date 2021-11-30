@@ -1,0 +1,15 @@
+{
+    "autoload": {
+        "psr-4": {
+            "CoolService\\": "CoolService/",
+            "Calculations\\": "Calculations/"
+        }
+    },
+    "authors": [
+        {
+            "name": "artemmm312",
+            "email": "artemmm312@gmail.com"
+        }
+    ],
+    "require": {}
+}
