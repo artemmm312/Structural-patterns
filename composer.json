@@ -1,0 +1,15 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Decorator\\": "Decor/",
+            "Notifer\\": "Notifer/"
+        }
+    },
+    "authors": [
+        {
+            "name": "artemmm312",
+            "email": "artemmm312@gmail.com"
+        }
+    ],
+    "require": {}
+}
