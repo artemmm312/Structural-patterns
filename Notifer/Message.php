@@ -10,7 +10,7 @@ class Message implements Notifer
 	{
 		$this->message = $message;
 	}
-	public function send()
+	public function send(): string
 	{
 		return $this->message . "<br>";
 	}

@@ -13,7 +13,7 @@ class BaseDecorator implements Notifer
 		$this->notifer = $notifer;
 	}
 
-	public function send()
+	public function send(): string
 	{
 		return $this->notifer->send();
 	}

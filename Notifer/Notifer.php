@@ -4,5 +4,5 @@ namespace Notifer;
 
 interface Notifer
 {
-	public function send();
+	public function send(): string;
 }
