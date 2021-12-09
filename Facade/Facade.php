@@ -6,8 +6,8 @@ use Systems\System1, Systems\System2;
 
 class Facade
 {
-	protected $system1;
-	protected $system2;
+	protected System1 $system1;
+	protected System2 $system2;
 
 	public function __construct(
 		System1 $system1 = null,
