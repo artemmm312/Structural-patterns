@@ -1,0 +1,15 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Facade\\": "Facade/",
+            "Systems\\": "Systems/"
+        }
+    },
+    "authors": [
+        {
+            "name": "artemmm312",
+            "email": "artemmm312@gmail.com"
+        }
+    ],
+    "require": {}
+}
