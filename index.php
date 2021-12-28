@@ -1,100 +1,13 @@
 <?php
 
-class HousVariation
-{
-	// Повторяющимися элементы
-	public $material;
-	public $high;
+/* Легковес — это структурный паттерн проектирования, 
+который позволяет вместить бóльшее количество объектов в отведённую оперативную память. 
+Легковес экономит память, разделяя общее состояние объектов между собой, 
+вместо хранения одинаковых данных в каждом объекте. */
 
-	public function __construct($material, $high)
-	{
-		$this->material = $material;
-		$this->high = $high;
-	}
+use HousDataBase\HousDataBase;
 
-	public function describeHousVariant($owner, $company): void
-	{
-		echo "Владелец: " . $owner . "<br>";
-		echo "Строительная компания: " . $company . "<br>";
-		echo "Материал: " . $this->material . "<br>";
-		echo "Колличество этажей: " . $this->high . "<br>";
-	}
-}
-
-//конкретная машина
-class ConcreteHous
-{
-	public $owner;
-	public $company;
-	private $housVariation;
-
-	public function __construct($owner, $company, HousVariation $housVariation)
-	{
-		$this->owner = $owner;
-		$this->company = $company;
-		$this->housVariation = $housVariation;
-	}
-
-	public function describeConcreteHous(): void
-	{
-		$this->housVariation->describeHousVariant($this->owner, $this->company);
-	}
-}
-
-//База данных домов
-class HousDataBase
-{
-	private $housVariations = [];
-	private $concreteHouses = [];
-
-	public function addHous($owner, $company, $material, $high,)
-	{
-		$housVariation = $this->getHousVariation($material, $high);
-		if ($housVariation === null)
-		{
-			$housVariation = new HousVariation($material, $high);
-			$this->housVariations[] = $housVariation;
-		}
-		// Создаем и пишем в "базу" конкретный дом
-		$this->concreteHouses[] = new ConcreteHous($owner, $company, $housVariation);
-	}
-
-	// Метод проверяет - есть ли в "базе" вариаций совпадения
-	private function getHousVariation($material, $high): ?HousVariation
-	{
-		for ($i = 0; $i < sizeof($this->housVariations); $i++)
-		{
-			if ($this->housVariations[$i]->material == $material && $this->housVariations[$i]->high == $high)
-			{
-				return $this->housVariations[$i];
-			}
-		}
-		return null;
-	}
-
-	public function printConcreteHous()
-	{
-		echo "<b>Конкретные дома:</b><br><br>";
-		for ($i = 0; $i < count($this->concreteHouses); $i++)
-		{
-			$this->concreteHouses[$i]->describeConcreteHous();
-			echo "<br>";
-		}
-		echo "<br>";
-	}
-
-	public function printHousVariations()
-	{
-		echo "<b>Вариации:</b><br><br>";
-		for ($i = 0; $i < count($this->housVariations); $i++)
-		{
-			$this->housVariations[$i]->describeHousVariant("Нет владельца", "Нет строительной компании");
-			echo "<br>";
-		}
-		echo "<br>";
-	}
-}
-
+require __DIR__ . '/vendor/autoload.php';
 
 $carDataBase = new HousDataBase();
 $carDataBase->addHous("Вася", "Компания1", "Кирпич", "2 этажа");
