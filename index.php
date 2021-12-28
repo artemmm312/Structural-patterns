@@ -9,11 +9,11 @@ use HousDataBase\HousDataBase;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$carDataBase = new HousDataBase();
-$carDataBase->addHous("Вася", "Компания1", "Кирпич", "2 этажа");
-$carDataBase->addHous("Петя", "Компания2", "Кирпич", "2 этажа");
-$carDataBase->addHous("Артём", "Компания3", "Кирпич", "2 этажа");
-$carDataBase->addHous("Колья", "Компания4", "Дерево", "1 этаж");
+$housDataBase = new HousDataBase();
+$housDataBase->addHous("Вася", "Компания1", "Кирпич", "2 этажа");
+$housDataBase->addHous("Петя", "Компания2", "Кирпич", "2 этажа");
+$housDataBase->addHous("Артём", "Компания3", "Кирпич", "2 этажа");
+$housDataBase->addHous("Колья", "Компания4", "Дерево", "1 этаж");
 
-$carDataBase->printConcreteHous();
-$carDataBase->printHousVariations();
+$housDataBase->printConcreteHous();
+$housDataBase->printHousVariations();
