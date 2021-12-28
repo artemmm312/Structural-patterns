@@ -4,7 +4,6 @@ namespace HousVariation;
 
 class HousVariation
 {
-	// Повторяющимися элементы
 	public string $material;
 	public string $high;
 
