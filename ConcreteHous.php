@@ -4,7 +4,6 @@ namespace ConcreteHous;
 
 use HousVariation\HousVariation;
 
-//конкретная машина
 class ConcreteHous
 {
 	public string $owner;
