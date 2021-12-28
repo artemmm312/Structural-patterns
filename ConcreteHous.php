@@ -7,11 +7,11 @@ use HousVariation\HousVariation;
 //конкретная машина
 class ConcreteHous
 {
-	public $owner;
-	public $company;
-	private $housVariation;
+	public string $owner;
+	public string $company;
+	private HousVariation $housVariation;
 
-	public function __construct($owner, $company, HousVariation $housVariation)
+	public function __construct(string $owner, string $company, HousVariation $housVariation)
 	{
 		$this->owner = $owner;
 		$this->company = $company;
